@@ -1,0 +1,21 @@
+<div class="mx-4 margin-t-pages-all animated fadeInUp">
+  <div class="row">
+    <div class="col-12 text-center py-1">
+      <h3>Productos</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-lg-4 d-flex justify-content-center my-3" *ngFor="let item of items">
+      <div class="text-center" style="width: 18rem;">
+        <img [src]="item.imagen" class="card-img-top rounded-circle  img-thumbnail" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{item.titulo | titlecase }}</h4>
+          <a [routerLink]="['/productos',item.url]" class="btn btn-info d-block">Ver Productos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,38 @@
+<nav class="bg-white fixed-top shadow-sm p-4 animated fadeInDown">
+  <div class="d-flex justify-content-between">
+    <div class="container-img">
+      <a [routerLink]="['/home']" (click)="menuOpen=false"><img src="assets/img/logo-completo.png" height="15rem"
+          alt="logo bellacosmetiks"></a>
+    </div>
+
+    <div>
+      <button type='button' (click)="menuOpen=!menuOpen;menuShop=true;" class="mr-2" [disabled]="menuOpen && !menuShop">
+        <i class="fas fa-shopping-cart py-2" style="padding: 0.5rem;"></i> <span class="pr-2">${{carrito}}</span>
+      </button>
+
+      <button type='button' (click)="menuOpen=!menuOpen;menuShop=false;" [disabled]="menuOpen && menuShop">
+        <i class="fas fa-bars py-2" style="padding: 0.6rem;"></i>
+      </button>
+    </div>
+
+  </div>
+  <div class="menu_nav text-center" [ngClass]="{'menu_open': menuOpen}">
+    <ul (click)="menuOpen=false" *ngIf="!menuShop">
+      <li class="item-link" routerLinkActive="active"><a [routerLink]="['/productos']">Productos</a></li>
+      <li class="item-link" routerLinkActive="active"><a [routerLink]="['/home']">Catalogo</a></li>
+      <li class="item-link" routerLinkActive="active"><a [routerLink]="['/contactame']">Contactame</a></li>
+      <li class="item-link" routerLinkActive="active"><a [routerLink]="['/home']">Sobre mi</a></li>
+    </ul>
+    <div class="text-center" *ngIf="menuShop">
+      <div class="mx-3">
+        <div>No Tienes <br>Productos <br>Seleccionados.</div>
+        <br>
+        <button class="btn btn-primary">Ir A Productos</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="button_bgClose" [ngClass]="{'button_bgClose_active': menuOpen}" (window:scroll)="onScroll()"
+  (click)="menuOpen=false">
+
+</div>

@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Sen', sans-serif;
+}
+
+.object-contain {
+    object-fit: contain;
+    object-position: top;
+}
+
+.margin-pages-top{
+    margin-top: 5.1rem;
+}
+
+.margin-t-pages-all{
+    margin-top: 6.4rem;
+}
+
+a{
+    text-decoration: none !important;
+    color:black;
+}

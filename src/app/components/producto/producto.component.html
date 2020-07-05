@@ -1,0 +1,13 @@
+<div class="text-center">
+    <img class="card-img-top" [src]="producto.imgUrl" alt="Card image cap">
+    <div class="card-body">
+      <h4> {{producto.titulo}} </h4>
+      <div>
+        <button (click)="detalles = true;enviarObjeto();" type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+          Ver detalles
+        </button>
+      </div>
+    </div>
+</div>
+
+
